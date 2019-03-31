@@ -2,8 +2,7 @@ package app;
 
 public class Cuenta {
 	
-	private float cantidad;
-	private static float saldo;
+	private float saldo;
 	private String nombre;
 	private String apellido;
 	
@@ -36,15 +35,6 @@ public class Cuenta {
 		return  saldo;		
 	}
 	
-	public void setcantidad(float canti) {
-		
-	cantidad = canti;		
-	}
-	
-	public float getcantidad() {
-		return  cantidad;		
-	}
-	
 	public String getNyA() {
 		
 		return getNombre()+ " "+getApellido()+".";
@@ -59,7 +49,7 @@ public class Cuenta {
 	
 	public void extraer(float extraccion) {
 		
-		if(saldo > 0 && saldo > extraccion)
+		if(saldo > 0 && saldo >= extraccion)
 		{
 			saldo = saldo - extraccion;
 		}
@@ -74,7 +64,7 @@ public class Cuenta {
 		
 		setNombre("");
 		setApellido("");
-		setSaldo(0.00f);
+		setSaldo(0);
 	}
 	
 	public Cuenta(String nombr, String Ape, float cargar){
